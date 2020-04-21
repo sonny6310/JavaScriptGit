@@ -1,0 +1,25 @@
+<script>
+    var stringVar = 'String';
+    var numberVar = 273;
+    var booleanVar = true;
+    var functionVar = function(){};
+    var objectVar = {
+        aa : 10,
+        bb : 20,
+        cc : function(){
+            alert("objectVar 함수입니다.");
+        },
+    };
+    var arrayVar = [];
+    
+    alert(typeof stringVar);
+    alert(typeof numberVar);
+    alert(typeof booleanVar);
+    alert(typeof functionVar);
+    alert(typeof objectVar);
+    alert(typeof arrayVar); // 배열은 객체로 분류되어 타입이 object로 나옴
+    
+    alert(objectVar.aa);
+    alert(objectVar.bb);
+    objectVar.cc();
+</script>
