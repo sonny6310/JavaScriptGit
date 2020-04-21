@@ -6,26 +6,29 @@
     <title>Document</title>
     <script>
 
-        // var : 전역변수이므로.
-        function doA(i){
-            setTimeout(function(){alert("실행 "+i);},1000);
-        }
-        for(var i=0; i<3; i++){
-            doA(i);
-        }
+        // // var : 전역변수이므로.
+        // function doA(i){
+        //     setTimeout(function(){alert("실행 "+i);},1000);
+        // }
+        // for(var i=0; i<3; i++){
+        //     doA(i);
+        // }
+
+// -------------------------------------------------------------------------------
 
         // for(let i=0; i<3; i++){
-        //     // 1초 뒤에 실행 i 라는 거 출력 예약
+        //     // 1초(1000m/s) 뒤에 {} 출력 예약
         //     // setTimeout(() => {alert("실행 "+i);}, 1000);
         //     setTimeout(function(){alert("실행 "+i);},1000);
         // }
 
-        
-        // 왜 undefined ?... 이해안됨
-        // for(var i=0; i<3; i++){
-        //     // (function(a){(setTimeout((a) => {alert("실행 "+a);},1000))})(i);
-        //     ((i)=>{setTimeout((i)=>{alert("실행 "+i);},1000);})(i);
-        // }
+// -------------------------------------------------------------------------------    
+
+        for(var i=0; i<3; i++){
+            // (function(a){(setTimeout(function(){alert("실행 "+a);},1000))})(i);
+            // (function(a){(setTimeout(()=>{alert("실행 "+a);},1000))})(i);
+            ((a)=>{setTimeout(() => {alert("실행 "+a);},1000)})(i);
+        }
     </script>
 </head>
 <body>
