@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var array = [1, '안녕하세요', true, function(){alert('text')}];
+    alert(array);
+    
+    array.push(11);   // 배열 끝에 추가
+    array.push({a:10,b:20});
+    array.push("abcdef");
+
+    array.pop();  // 배열 마지막내용 빼기
+
+    //배열 사이에 추가,삭제는 splice   : 구글검색해서 사용법 보세요
+
+    // for(var i=0; i<array.length; i++){
+    for(var i in array){  // 위 for문과 동일함
+        alert(array[i]);
+        console.log("array["+i+"] = "+array[i]);
+    }
+
+    for(var j of array){     // in과 of 차이 확인 잘 하기.
+        alert(j);
+        console.log("array = "+j);
+    }
+
+    array[3]();  // 배열 3열 함수 호출
+</script>

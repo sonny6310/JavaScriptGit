@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="dan">
+    <button onclick="doGugudan()">구구단 출력</button>
+    <div id="mdiv">
+    </div>
+</body>
+</html>
+<script>
+    function doGugudan(){
+        var number = document.getElementById("dan").value;
+        var output = "";
+        for(var i=1; i<10; i++){
+            output+=(number+" * "+i+" = "+number*i)+"<br>";
+        }
+        mdiv.innerHTML=output;
+        mdiv.style.fontSize="13.5px";
+        mdiv.style.marginLeft="1px";
+    }
+</script>
