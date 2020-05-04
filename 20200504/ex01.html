@@ -65,6 +65,22 @@
     </div>
     <br>
     <div>
+        <h4>2진수변환</h4>
+        <script>
+            var inputDec = prompt('2진수로 변환할 수 입력:','');
+            var decimal = Number(inputDec);
+            function ToBinary(dec){
+                if(dec==0 || dec==1){
+                    return dec+"";
+                }else{
+                    return ToBinary((parseInt(dec/2)))+""+(dec%2);
+                }
+            }
+            document.write(decimal+"을 2진수로 변환하면 "+ToBinary(decimal));
+        </script>
+    </div>
+    <br>
+    <div>
         <h4>소수 출력</h4>
         <script>
             function Prime(lim){
