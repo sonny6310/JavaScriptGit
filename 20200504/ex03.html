@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    반지름 = <input type="text" name="" id="r">
+    <button id="btnA">원</button>
+    <div id="printCircle"></div>
+
+    <input type="text" name="" id="prime">미만 소수
+    <button id="btnB">출력</button>
+    <div id="printPrime"></div>
+
+    <input type="text" name="" id="square">
+    <button id="btnC">팩토리얼</button>
+    <button id="btnD">10진수 확인</button>
+    <div id="facbin"></div>
+</body>
+</html>
+<script>
+    document.getElementById("btnA").onclick=function(){
+        var r=document.getElementById("r").value;
+        if (r<0){
+            document.getElementById("printCircle").innerHTML="반지름은 0 미만이 될 수 없습니다."
+        }else{
+            document.getElementById("printCircle").innerHTML="원 넓이는 "+(r*r*3.14)+"<br>"+"원 둘레는 "+(2*r*3.14)+"입니다";
+        }      
+    }
+
+    function primeNumber(a) {
+        var cnt=0;
+        for(var i=1; i<a+1; i++){
+            if(a%i==0) {
+                cnt++;
+            }
+        }
+        if(cnt==2) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+    document.getElementById("btnB").onclick=function(){
+        var p=Number(document.getElementById("prime").value);
+        for(var i=2; i<p; i++){
+            if(primeNumber(i)){
+                document.getElementById("printPrime").append(i+" ");
+            }
+        }
+    }
+
+    function fac(F){
+        if(F>0){
+            return F*fac(F-1);
+        }else{
+            return 1;
+        }
+    }
+
+    // function bin(B){
+    //     if(B==0 || B==1){
+    //         return B+"";
+    //     }else{
+    //         return  bin(parseInt(B/2))+(B%2);
+    //     }
+    // }
+    function bin(B){
+        if(B>1){
+            return bin(parseInt(B/2))+""+(B%2);
+        }else{
+            return B
+        }
+    }
+
+    document.getElementById("btnC").onclick=function(){
+        var sq=Number(document.getElementById("square").value);
+        document.getElementById("facbin").innerHTML=fac(sq);
+    }
+    document.getElementById("btnD").onclick=function(){
+        var sq=Number(document.getElementById("square").value);
+        document.getElementById("facbin").innerHTML=bin(sq);
+    }
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a">
+    <input type="text" id="b">
+    <button id="btnA">사칙연산출력</button>
+    <button id="btnB">절대값</button>
+    <div id="printArea">
+
+    </div>
+</body>
+</html>
+<script>
+    var result="출력테스트";
+    document.getElementById("printArea").innerHTML = result;
+    
+    var btnA = document.getElementById("btnA");
+    btnA.onclick = function(){
+        var result = "";
+        var num1 = Number(document.getElementById("a").value);
+        var num2 = Number(document.getElementById("b").value);
+        result = num1+" + "+num2+" = "+(num1+num2)+"<br>";
+        result += num1+" - "+num2+" = "+(num1-num2)+"<br>";
+        result += num1+" * "+num2+" = "+(num1*num2)+"<br>";
+        result += num1+" / "+num2+" = "+(num1/num2);
+        document.getElementById("printArea").innerHTML = result;
+    }
+
+    var btnB = document.getElementById("btnB");
+    btnB.onclick = function(){
+        var num1 = Number(document.getElementById("a").value);
+        var num2 = Number(document.getElementById("b").value);
+        if(num1 > num2){
+            document.getElementById("printArea").innerHTML = "abs("+num1+" - "+num2+") = "+(num1-num2)+"입니다"
+        }else{
+            document.getElementById("printArea").innerHTML = "abs("+num1+" - "+num2+") = "+(num2-num1)+"입니다"
+        }
+    }
+</script>

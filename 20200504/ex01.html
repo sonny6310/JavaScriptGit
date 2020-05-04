@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h4>삼각형 넓이</h4>
+        <script>
+            function Tri(length, height){
+                var area=(length*height)/2;
+                return "밑변이 "+length+", 높이가 "+height+"인 삼각형의 넓이는 "+area+"이다"
+
+            }
+            var inputLength = prompt('길이 입력:','');
+            var lth = Number(inputLength);
+            var inputHeight = prompt('높이 입력:','');
+            var hht = Number(inputHeight);
+            document.write(Tri(lth,hht));
+        </script>
+    </div>
+    <br>
+    <div>
+        <h4>원 넓이, 원 둘레</h4>
+        <script>
+            function ccleArea(r){
+                var carea=r*r*3.14;
+                return "반지름이 "+r+"인 원의 넓이는 "+carea+"이다"
+            }
+            function ccleFen(r){
+                var cfen=2*r*3.14;
+                return "반지름이 "+r+"인 원의 둘레는 "+cfen+"이다"
+            }
+            var inputRadius = prompt('반지름 입력:','');
+            var rad = Number(inputRadius);
+            document.write(ccleArea(rad)+"<br>");
+            document.write(ccleFen(rad));
+        </script>
+    </div>
+    <br>
+    <div>
+        <h4>제곱계산</h4>
+        <script>
+            var inputSquareValue = prompt('제곱계산할 수 입력:','');
+            var svalue = Number(inputSquareValue);
+            var inputHowMany = prompt('몇 제곱?','');
+            var nvalue = Number(inputHowMany);
+            function square(n){
+                if(n==0){
+                    return 1;
+                }else{
+                    return svalue*square(n-1);
+                }
+            }
+            document.write(svalue+"의 "+nvalue+"승은 "+square(nvalue));
+        </script>
+    </div>
+    <br>
+    <div>
+        <h4>소수 출력</h4>
+        <script>
+            function Prime(lim){
+                var prime=[];
+                var m=0;
+                for(var i=2; i<lim+1; i++){
+                    for(var j=2; j<i; j++){
+                        if(i%j==0){
+                            m++;
+                        }
+                    }
+                    if(m==0){
+                        prime.push(" "+i);
+                    }
+                    m=0;
+                }
+                return prime;
+            }
+            var inputPrimeLimit = prompt('몇 이하의 소수 출력?','');
+            var plimit = Number(inputPrimeLimit);
+            document.write(plimit+"이하의 소수 출력: <br>"+Prime(plimit));
+        </script>
+    </div>
+</body>
+</html>
