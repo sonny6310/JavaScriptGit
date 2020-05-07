@@ -8,31 +8,36 @@
 <style>
     div{
         position:absolute;
+        margin-left: 450px;
+        margin-top: 350px;
         
     }
-    div#sun{
-        margin-left:500px;
-        margin-top:300px;
-    }
-    div#earth{
-        margin-left:700px;
-        margin-top:300px;
-    }
+    /* div#sun{
+        margin-left: 250px;
+        margin-top: 250px;
+    } */
 </style>
 <body>
     <div id="sun" style="width: 100px; height: 100px; background: url('sun.jpg'); background-size: 100%;"></div> 
     <div id="earth" style="width: 100px; height: 100px; background: url('earth.png'); background-size: 100%;"></div> 
+    <div id="moon" style="width: 50px; height: 50px; background: url('moon.png'); background-size: 100%;"></div> 
 </body>
 </html>
 <script>
-    var r=200;
-    var seta=0;
+    var earthseta=0;
+    var moonseta=0;
     setInterval(function(){
         var earth=document.getElementById("earth");
-        var y=Math.sin(seta)*r;
-        var x=Math.cos(seta)*r;
-        seta++;
-        earth.style.left=(x-200)+"px";
-        earth.style.top=y+"px";
-    }, 300)
+
+        var earthy=300*Math.sin(earthseta);
+        var earthx=8.5+300*Math.cos(earthseta);
+        var moony=earthy+150*Math.sin(moonseta);
+        var moonx=earthx+150*Math.cos(moonseta);
+        earth.style.left=earthx+"px";
+        earth.style.top=earthy+"px";
+        moon.style.left=moonx+"px";
+        moon.style.top=moony+"px";
+        earthseta+=0.03;
+        moonseta+=0.1;
+    }, 50)
 </script>
