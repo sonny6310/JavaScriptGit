@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array=[52,273,103,32,57,103,31,2];
+        var output1=array[0];
+        var output2=array[0];
+        for(let i=1; i<array.length; i++){
+            if(output1<array[i]){
+                output1=array[i];
+            }
+            if(output2>array[i]){
+                output2=array[i];
+            }
+        }
+        document.write("최대값은 "+output1+"<br>최소값은 "+output2);
+    </script>
+</body>
+</html>

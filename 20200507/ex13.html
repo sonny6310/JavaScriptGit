@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="numb1">
+    <input type="text" name="" id="numb2">
+    <button id="btnA">출력</button>
+    <div id="printArea1"></div>
+    <div id="printArea2"></div>
+</body>
+</html>
+<script>
+    document.getElementById("btnA").onclick=function(){
+        var output1=0;
+        var output2=1;
+        var num1 = Number(document.getElementById("numb1").value);
+        var num2 = Number(document.getElementById("numb2").value);
+        for(let i=num1; i<num2+1; i++){
+            output1+=i;
+            output2*=i;
+        }
+        document.getElementById("printArea1").innerHTML = "합: "+output1;
+        document.getElementById("printArea2").innerHTML = "곱: "+output2;    
+    }
+</script>
