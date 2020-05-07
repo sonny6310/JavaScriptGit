@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        position:absolute;
+        
+    }
+    div#sun{
+        margin-left:500px;
+        margin-top:300px;
+    }
+    div#earth{
+        margin-left:700px;
+        margin-top:300px;
+    }
+</style>
+<body>
+    <div id="sun" style="width: 100px; height: 100px; background: url('sun.jpg'); background-size: 100%;"></div> 
+    <div id="earth" style="width: 100px; height: 100px; background: url('earth.png'); background-size: 100%;"></div> 
+</body>
+</html>
+<script>
+    var r=200;
+    var seta=0;
+    setInterval(function(){
+        var earth=document.getElementById("earth");
+        var y=Math.sin(seta)*r;
+        var x=Math.cos(seta)*r;
+        seta++;
+        earth.style.left=(x-200)+"px";
+        earth.style.top=y+"px";
+    }, 300)
+</script>

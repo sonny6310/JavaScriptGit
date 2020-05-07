@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mdiv1"></div>
+    <div id="mdiv2"></div>
+</body>
+</html>
+<script>
+    function squ(x){    
+        return 0;
+    }
+    function py(a,b){
+        function squ(x){    // 내부함수를 사용하면 간단하게 함수 이름 충돌을 막을 수 있다. 내부함수를 사용하면 외부에 이름이 같은 함수가 있어도 내부함수를 우선실행한다.
+            return x*x;
+        }
+        return "빗변 c="+Math.sqrt(squ(a)+squ(b));
+    }
+    document.getElementById("mdiv1").innerHTML=py(3,4);
+    document.getElementById("mdiv2").innerHTML=squ(4);  // 내부함수는 내부에서만 작동하므로 외부함수가 작동되어 0이 출력.
+</script>

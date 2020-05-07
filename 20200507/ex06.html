@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mdiv" style="width: 100px; height: 100px; background-color: aquamarine;"></div>
+    <button onclick="doA()">매개변수 없는 함수</button>
+    <button onclick="doA(1)">매개변수가 1개</button>
+    <button onclick="doA(1,2)">매개변수가 2개</button>
+</body>
+</html>
+<script>
+    // function doA(){
+    //     console.log('')
+    // }
+    // function doA(a){
+    //     console.log('a')
+    // }
+    // function doA(a,b){
+    //     console.log('a','b')
+    // }
+    // // 자바에서는 오버로딩이라고 해서 같은 함수명이지만 변수입력방식이 다르면 다 다르게 작동하지만 스크립트에서는 불가능하다.
+
+    function doA(){
+        // alert(typeof (arguments)+" : "+arguments.length);
+        if(arguments.length==0){
+            document.getElementById("mdiv").style.backgroundColor="yellowgreen";
+            document.getElementById("mdiv").style.marginLeft="0px";
+        }
+        if(arguments.length==1){
+            document.getElementById("mdiv").style.backgroundColor="darkgrey";
+            document.getElementById("mdiv").style.marginLeft="50px";
+        }else if(arguments.length==2){
+            document.getElementById("mdiv").style.backgroundColor="skyblue";
+            document.getElementById("mdiv").style.marginLeft="100px";
+            document.getElementById("mdiv").innerHTML="내용"
+        }
+    }
+</script>
