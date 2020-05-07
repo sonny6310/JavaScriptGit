@@ -8,36 +8,56 @@
 <style>
     div{
         position:absolute;
-        margin-left: 450px;
-        margin-top: 350px;
-        
     }
-    /* div#sun{
-        margin-left: 250px;
-        margin-top: 250px;
-    } */
+    div#sun{
+        margin-left:550px;
+        margin-top:400px;
+    }
+    
 </style>
 <body>
-    <div id="sun" style="width: 100px; height: 100px; background: url('sun.jpg'); background-size: 100%;"></div> 
+    <div id="sun"><h3>해</h3></div>
+    <div id="mer"><h3>수성</h3></div>
+    <div id="ven"><h3>금성</h3></div>
+    <div id="earth"><h3>지구</h3></div> 
+    <div id="moon"><h3>달</h3></div>
+
+    <!-- <div id="sun" style="width: 100px; height: 100px; background: url('sun.jpg'); background-size: 100%;"></div> 
     <div id="earth" style="width: 100px; height: 100px; background: url('earth.png'); background-size: 100%;"></div> 
-    <div id="moon" style="width: 50px; height: 50px; background: url('moon.png'); background-size: 100%;"></div> 
+    <div id="moon" style="width: 25px; height: 25px; background: url('moon.png'); background-size: 100%;"></div>  -->
 </body>
 </html>
 <script>
+    var earth=document.getElementById("earth");
+    var moon=document.getElementById("moon");
+    var mer=document.getElementById("mer");
+    var ven=document.getElementById("ven");
+    var merseta=0;
+    var venseta=0;
     var earthseta=0;
     var moonseta=0;
-    setInterval(function(){
-        var earth=document.getElementById("earth");
 
-        var earthy=300*Math.sin(earthseta);
-        var earthx=8.5+300*Math.cos(earthseta);
-        var moony=earthy+150*Math.sin(moonseta);
-        var moonx=earthx+150*Math.cos(moonseta);
+    setInterval(function(){
+        var merx=550+120*Math.cos(merseta);
+        var mery=400+120*Math.sin(merseta);
+        var venx=550+200*Math.cos(venseta);
+        var veny=400+200*Math.sin(venseta);
+        var earthx=550+350*Math.cos(earthseta);
+        var earthy=400+350*Math.sin(earthseta);
+        var moonx=earthx+60*Math.cos(moonseta);
+        var moony=earthy+60*Math.sin(moonseta);
+        
+        mer.style.left=merx+"px";
+        mer.style.top=mery+"px";
+        ven.style.left=venx+"px";
+        ven.style.top=veny+"px";
         earth.style.left=earthx+"px";
         earth.style.top=earthy+"px";
         moon.style.left=moonx+"px";
         moon.style.top=moony+"px";
-        earthseta+=0.03;
-        moonseta+=0.1;
-    }, 50)
+        merseta+=0.00711;
+        venseta+=0.00525;
+        earthseta+=0.0045;
+        moonseta+=0.015;
+    }, 1)
 </script>
