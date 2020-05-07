@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mdiv" style="width: 100px; height: 100px; background-color: skyblue;"></div>
+    <button onclick="doA(1)">1btn</button>
+    <button onclick="doA(2)">2btn</button>
+    <button onclick="doA(3)">3btn</button>
+</body>
+</html>
+<script>
+
+    var doA=function(a){
+        alert("a="+a);
+    }
+    document.getElementById("mdiv").onclick=function(){
+        alert("test");
+        aa(); 
+        // 스크립트 코드를 위에서 순서대로 읽기 전에 선언적함수를 우선해여 먼저 읽고 나서 코드를 순서대로 읽는다.
+        // 따라서 선언적함수가 먼저 생성되고, 같은 변수명인 익명함수가 나중에 생성되므로 기존 선언적함수를 나중에 생성된 익명함수가 덮어씌우므로 익명함수가 출력이 된다.
+    }
+    var aa=function(){
+        alert("익명함수aa");
+    }
+    function aa(){
+        alert("선언적함수aa");
+    }
+
+</script>

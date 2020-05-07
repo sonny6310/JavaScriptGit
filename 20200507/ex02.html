@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var result=confirm("계속하시겠습니까?");
+    var i=0;
+    while(true){
+        alert("result("+i+")="+result);
+        if(!confirm("계속하시겠습니까?")){
+            alert("그만합니다");
+            break;
+        }
+        i++;
+    }
+
+    for(let j=0; j<10; j++){
+        if(j==3){
+            continue;
+        }
+        console.log("j="+j);
+    }
+
+    for(const a of [10,20,30,40]){
+        console.log("a="+a);
+    }
+    for(const b of [{a:10},{a:20},{a:30},{a:40}]){
+        console.log("b="+b.a);
+    }
+</script>

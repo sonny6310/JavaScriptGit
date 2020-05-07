@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="a" onclick="doA();">abtn</button>
+    <div id="mdiv" style="width: 100px; height: 100px; background-color: paleturquoise;" onmouseover="doB();"></div>
+</body>
+</html>
+<script>
+    function doA(){
+        alert("doA 함수입니다.");
+    }
+    // doA();
+    function doB(){
+        document.getElementById("mdiv").style.background = "skyblue"
+    }
+</script>
