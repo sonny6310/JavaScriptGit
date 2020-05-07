@@ -11,6 +11,16 @@
 </html>
 <script>
     do{
-        var input1 = prompt('p117 Q1','');
-    }while(input1.indexOf("잘 있어")<0)
+        var input = prompt('p117 Q1','');
+        if(input.indexOf("시간")>=0){
+            var date=new Date();
+            alert(date);
+        }
+        if(input.indexOf("안녕")>=0){
+            alert("안녕하세요");
+        }
+        if(input.indexOf("뭐해")>=0 || input.indexOf("뭐 해")>=0){
+            alert("공부중!");
+        }
+    }while(input.indexOf("잘 있어")<0 && input.indexOf("잘있어")<0)
 </script>
