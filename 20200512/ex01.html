@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var uri="http://dron512.dothome.co.kr?a=한글한글";
+    var aa = escape(uri);
+    console.log("aa= "+aa);
+
+    var bb = unescape(aa);
+    console.log("bb= "+bb);
+
+    var cc = encodeURI(uri);
+    console.log("aa= "+aa);
+
+    var dd = decodeURI(cc);
+    console.log("bb= "+bb);
+</script>

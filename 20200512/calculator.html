@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin:0;
+            padding:0;
+        } */
+        li{
+            list-style-type: none;
+            float: left;
+            background-color: whitesmoke;
+            margin: 2px;
+            padding: 5px 15px; 
+            width: 15px;
+            text-align: center;
+        }
+        .calculator>ul>input{
+            width: 190px;
+        }
+        li.res{
+            width: 113px;
+        }
+        li.cal{
+            width: 64px; 
+        }
+        input {
+            text-align: right;
+            border: none;
+        }
+        #container, .calculator, .calculator>ul{
+            width: 196px;
+        }
+        input#process{
+            font-size: 10px;
+            background: rgba(226, 226, 226, 0.692);
+            margin: -1px 2px;
+        }
+        input#result{
+            height: 25px;
+            background: linear-gradient( to bottom, rgba(226, 226, 226, 0.692), white );
+            margin: -1px 2px 2px 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>사칙연산 계산기</h1>
+    <div id="container">
+        <div class="calculator">
+            <ul>
+                <input type="text" id="process">
+                <input type="text" id="result">
+                <li class="res" onclick="reset()">AC</li>
+                <li class="num" onclick="add('/')">/</li>
+                <li class="num" onclick="add(7)">7</li>
+                <li class="num" onclick="add(8)">8</li>
+                <li class="num" onclick="add(9)">9</li>
+                <li class="num" onclick="add('*')">*</li>
+                <li class="num" onclick="add(4)">4</li>
+                <li class="num" onclick="add(5)">5</li>
+                <li class="num" onclick="add(6)">6</li>
+                <li class="num" onclick="add('-')">-</li>
+                <li class="num" onclick="add(1)">1</li>
+                <li class="num" onclick="add(2)">2</li>
+                <li class="num" onclick="add(3)">3</li>
+                <li class="num" onclick="add('+')">+</li>
+                <li class="num" onclick="add(0)">0</li>
+                <li class="num" onclick="add('.')">.</li>
+                <li class="cal" onclick="calculate()">=</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function add(numb) {
+        document.getElementById('process').value += numb;
+    }
+    function calculate() {
+        document.getElementById('result').value = eval(process.value);
+    }
+    function reset() {
+        document.getElementById('process').value = "";
+        document.getElementById('result').value = "";
+    }
+</script>

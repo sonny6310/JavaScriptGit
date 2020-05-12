@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var aaa=[];
+    var bbb={
+        a:10,
+        b:function(){
+            alert("bbb객체 함수");
+        }
+    };
+    alert(bbb.a);    // 또는 alert(bbb["a"]);
+    bbb.b();  // 또는 bbb["b"]();
+    
+    var doA = function(a,b){return a+b};
+    const doB = (a,b)=>{return a*b};
+
+    alert(doA(1,3));
+    alert(doB(1,3));
+
+    (function(){
+        alert("원래 익명함수")
+    })();
+
+    (()=>{
+        alert("화살표 함수")
+    })();
+
+    function test(a,b,c){
+        console.log("a= "+a);
+        console.log("b= "+b);
+        console.log("c= "+c);
+    }
+    test(11,22,33);
+    test(11,22);
+    test(11);
+</script>
