@@ -19,6 +19,8 @@
         var output2=1;
         var num1 = Number(document.getElementById("numb1").value);
         var num2 = Number(document.getElementById("numb2").value);
+        (num1 > num2) ? num1=Number(document.getElementById("numb2").value) : num1=Number(document.getElementById("numb1").value);
+        (num2 > num1) ? num2=Number(document.getElementById("numb2").value) : num2=Number(document.getElementById("numb1").value);
         for(let i=num1; i<num2+1; i++){
             output1+=i;
             output2*=i;
