@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    th{
+        text-align: left;
+        background-color: gray;
+        color: whitesmoke;
+    }
+    table{
+        width: 500px;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>속성</th>
+            <th>값</th>
+        </tr>
+        <tr>
+            <td id="info"></td>
+            <td id="value"></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function Book(name,won,writer,num,page){
+        book={
+            "이름":name,
+            "가격":won,
+            "저자":writer,
+            "ISBN":num,
+            "페이지 수":page
+        };
+        return book;
+    }
+
+    var book=[];
+    book.push(Book("Nature of Code","30000원","다니엘 쉬프만",9788968481901,"620페이지"));
+
+    var output1="";
+    var output2="";
+    for (const key in book) {
+        const element = book[key];
+        output1+=key+"<br>";
+        output2+=element+"<br>";
+    }
+    document.getElementById("info").innerHTML=output1;
+    document.getElementById("value").innerHTML=output2;
+</script>

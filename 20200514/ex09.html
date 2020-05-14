@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    th{
+        text-align: left;
+        background-color: gray;
+        color: whitesmoke;
+    }
+    table{
+        width: 800px;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>이름(name)</th>
+            <th>미네랄(mineral)</th>
+            <th>가스(gas)</th>
+            <th>보급품(supply)</th>
+        </tr>
+        <tr>
+            <td id="name"></td>
+            <td id="info1"></td>
+            <td id="info2"></td>
+            <td id="info3"></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function Unit(info1,info2,info3,info4,info5){
+        unit={
+            "일벌레":info1,
+            "여왕":info2,
+            "바퀴":info3,
+            "히드라리스크":info4,
+            "타락귀":info5
+        };
+        return unit;
+    }
+
+    var unit=[];
+    unit.push(Unit([50,0,1],[150,0,2],[75,25,2],[100,50,2],[150,100,2]));
+
+    var output1="";
+    var output2="";
+    var output3="";
+    var output4="";
+    for (const key in unit) {
+        const element = unit[key];
+        output1+=key+"<br>";
+        output2+=element[0]+"<br>";
+        output3+=element[1]+"<br>";
+        output4+=element[2]+"<br>";
+    }
+    document.getElementById("name").innerHTML=output1;
+    document.getElementById("info1").innerHTML=output2;
+    document.getElementById("info2").innerHTML=output3;
+    document.getElementById("info3").innerHTML=output4;  
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var a=10;
+    var b=a;
+
+    a=20;
+
+    alert("a="+a);
+    alert("b="+b);
+
+    // ----------------------------------------
+
+    var aa=[1,2,3,4,5];
+    var bb=aa;
+
+    aa[0]=5;
+
+    alert("aa="+aa);
+    alert("bb="+bb);
+    // 배열은 주소값복사되기 때문
+
+    // ----------------------------------------
+
+    //객체 복사 함수
+    function clone(obj){
+        var output={};
+        for (var key in obj) {
+            output[key]=obj[key];
+        }
+        return output;
+    }
+    
+    var original={
+        a:10,
+        b:20
+    };
+    var referenced = original;
+    var cloned = clone(original);
+
+    original.a=50;
+    
+    alert("original::\n" +JSON.stringify(original, null, 2));
+    alert("referenced::\n"+JSON.stringify(referenced, null, 2));   // 객체도 배열과 마찬가지로 주소값으로 복사되기때문 (얕은 복사)
+    alert("cloned::\n"+JSON.stringify(cloned, null, 2));   // 깊은 복사
+    
+</script>

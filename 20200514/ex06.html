@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mdiv"></div>
+</body>
+</html>
+<script>
+    function makeStudent(name,math,eng){
+        student={"이름":name,"수학":math,"영어":eng};
+        return student;
+    }
+
+        var students=[];
+    students.push(makeStudent("김",100,10));
+    students.push(makeStudent("나",90,20));
+    students.push(makeStudent("박",80,30));
+    students.push(makeStudent("이",70,40));
+
+    console.log(students);
+// -------------------------------------------------------
+// ECMAScript 6
+    function Student(name,math,eng){
+        this.이름=name;
+        this.수학=math;
+        this.영어=eng;
+    }
+    var students=[];
+
+    var students=[];
+    students.push(new Student("김",100,10));
+    students.push(new Student("나",90,20));
+    students.push(new Student("박",80,30));
+    students.push(new Student("이",70,40));
+
+    console.log(students);
+</script>
