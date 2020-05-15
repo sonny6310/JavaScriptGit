@@ -98,7 +98,7 @@
         document.getElementById('process').value += numb;
     }
     function calculate() {
-        document.getElementById('result').value = eval(process.value);
+        document.getElementById('result').value = eval(document.getElementById('process').value);
     }
     function reset() {
         document.getElementById('process').value = "";
